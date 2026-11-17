@@ -540,7 +540,8 @@ blockquote {
 .style-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
+  gap: 1.1rem;
+  align-items: start;
 }
 
 .style-grid figure {
@@ -548,13 +549,16 @@ blockquote {
   overflow: hidden;
   border-radius: var(--radius);
   border: 1px solid var(--line);
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(0, 0, 0, 0.35);
 }
 
 .style-grid img {
   width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  object-position: center;
+  background: #0a0a0c;
 }
 
 /* Videos */
@@ -693,9 +697,13 @@ blockquote {
   }
 
   .guion__grid,
-  .video-grid,
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+
   .style-grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
   .credits {
@@ -711,10 +719,6 @@ blockquote {
     width: 100%;
     height: 1px;
     min-height: 0;
-  }
-
-  .style-grid {
-    grid-template-columns: 1fr;
   }
 
   .credits {
